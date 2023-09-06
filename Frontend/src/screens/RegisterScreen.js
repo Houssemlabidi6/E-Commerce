@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate, useLocation } from "react-router-dom"; // Import useLocation
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
@@ -7,7 +7,7 @@ import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
 import { register } from "../actions/userActions";
 
-const RegisterScreen = ({ location }) => {
+const RegisterScreen = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,6 +20,7 @@ const RegisterScreen = ({ location }) => {
   const { loading, error, userInfo } = userRegister;
 
   const navigate = useNavigate();
+  const location = useLocation(); // Use useLocation to get the current location
   const redirect = location.search ? location.search.split("=")[1] : "/";
 
   useEffect(() => {
