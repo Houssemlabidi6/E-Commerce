@@ -16,14 +16,14 @@ connectDB();
 const app = express();
 
 // Configure CORS to allow requests from your frontend origin
-// app.use(
-//   cors({
-//     origin: "https://e-commerce-cn1m.vercel.app",
-//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-//     credentials: true, // Enable sending cookies and other credentials
-//     optionsSuccessStatus: 204, // Respond to preflight requests with 204 (No Content)
-//   })
-// );
+app.use(
+  cors({
+    origin: "https://e-commerce-api-mu-nine.vercel.app",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true, // Enable sending cookies and other credentials
+    optionsSuccessStatus: 204, // Respond to preflight requests with 204 (No Content)
+  })
+);
 
 app.use(express.json());
 

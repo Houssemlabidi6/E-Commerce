@@ -32,7 +32,11 @@ export const createOrder = (order) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.post("/api/orders", order, config);
+    const { data } = await axios.post(
+      "https://e-commerce-api-mu-nine.vercel.app/api/orders",
+      order,
+      config
+    );
 
     dispatch({
       type: ORDER_CREATE_SUCCESS,
@@ -65,7 +69,10 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`/api/orders/${id}`, config);
+    const { data } = await axios.get(
+      `https://e-commerce-api-mu-nine.vercel.app/api/orders/${id}`,
+      config
+    );
 
     dispatch({
       type: ORDER_DETAILS_SUCCESS,
@@ -102,7 +109,7 @@ export const payOrder =
       };
 
       const { data } = await axios.put(
-        `/api/orders/${orderId}/pay`,
+        `https://e-commerce-api-mu-nine.vercel.app/api/orders/${orderId}/pay`,
         paymentResults,
         config
       );
@@ -139,7 +146,10 @@ export const listOrders = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`/api/orders/myorders`, config);
+    const { data } = await axios.get(
+      `https://e-commerce-api-mu-nine.vercel.app/api/orders/myorders`,
+      config
+    );
 
     dispatch({
       type: ORDER_LIST_ORDERS_SUCCESS,
