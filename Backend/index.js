@@ -18,7 +18,7 @@ const app = express();
 // Configure CORS to allow requests from your frontend origin
 app.use(
   cors({
-    origin: "https://e-commerce-api-mu-nine.vercel.app",
+    origin: "https://e-commerce-phi-teal-23.vercel.app",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true, // Enable sending cookies and other credentials
     optionsSuccessStatus: 204, // Respond to preflight requests with 204 (No Content)
