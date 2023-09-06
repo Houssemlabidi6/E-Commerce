@@ -74,7 +74,7 @@ export const register = (name, email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "/api/users",
+      "https://e-commerce-api-mu-nine.vercel.app/api/users",
       { name, email, password },
       config
     );
